@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        *{
+            font-family: 'Trebuchet MS'; 
+        }
+        #container{
+            display:flex; 
+            justify-content:center; 
+            align-items:center; 
+            margin-top:-50px;
+            height:50vh; 
+        }
+        #sudokuDiv {
+            height: 220px;
+            width: 200px;
+            border: 2px solid black;
+            display:flex;
+            flex-wrap: wrap; 
+            border-radius:5px;
+            padding:15px;
+        }
+        #cell1 {
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            margin: 5px 7px;
+            border-radius:5px;
+        }
+        #cell2 {
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            margin: 5px 5px;
+            border-radius: 5px;
+        }
+        #cell3 {
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            margin: 5px 5px;
+            border-radius: 5px;
+        }
+        #cell4 {
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            margin: 0px 7px;
+            border-radius: 5px;
+        }
+        #cell5 {
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            margin: 0px 5px;
+            border-radius: 5px;
+        }
+        #cell6 {
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            margin: 0px 5px;
+            border-radius: 5px;
+        }
+        #cell7 {
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            margin: 0px 7px;
+            border-radius: 5px;
+        }
+        #cell8 {
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            margin: 0px 5px;
+            border-radius: 5px;
+        }
+        #cell9 {
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            margin: 0px 5px;
+            border-radius: 5px;
+        }
+
+        #btn{
+            margin-top:10px;
+            margin-left:20px;
+        }
+
+        h1{
+            font-size:30px;
+            text-align:center;
+        }
+        h2{ text-align:center;}
+        .hide{display:none;}
+        #message {
+            margin-top: 30px;
+            border: 1px solid black;
+            width: 400px;
+            height: 50px;
+            border-radius: 15px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mini Sudoku</h1>
+    <h2>GUESS THE PATTERN</h2>
+    <div id="container">
+        <div id="sudokuDiv">
+            <div contentEditable="true" id="cell1"><h1>?</h1></div>
+            <div id="cell2"><h1>3</h1></div>
+            <div id="cell3"><h1>1</h1></div>
+            <div id="cell4"><h1>1</h1></div>
+            <div contentEditable="true" id="cell5"><h1>?</h1></div>
+            <div id="cell6"><h1>3</h1></div>
+            <div id="cell7"><h1>3</h1></div>
+            <div id="cell8"><h1>1</h1></div>
+            <div contentEditable="true" id="cell9"><h1>?</h1></div>
+            <button id="btn">CHECK YOUR PATTERN</button>
+        </div>
+    </div>
+    <center><div id="message" class="hide"></div></center>
+
+    <script>
+        var btn = document.querySelector('#btn');
+        var cell1 = document.querySelector('#cell1');
+       // console.log(cell1.innerText); 
+        var cell5 = document.querySelector('#cell5');
+        var cell9 = document.querySelector('#cell9');
+        var message = document.querySelector('#message'); 
+
+
+        btn.addEventListener('click', function () {
+            //console.log(cell1.innerHTML); 
+            message.classList.remove('hide');
+
+            if ((cell1.innerText == 2) && (cell5.innerText == 2) && (cell9.innerText == 2)) {
+                console.log('correct');
+                message.innerText = 'You are correct!'
+            } else {
+                console.log('wrong'); 
+                message.innerText = 'Wrong! Try again!';
+            }
+
+
+        }); 
+    </script>
+</body>
+</html>
